@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.android3lesson1.R;
 import com.example.android3lesson1.data.remote.OnFilmDetailCallback;
 import com.example.android3lesson1.databinding.FragmentFilmDetailBinding;
@@ -55,6 +56,10 @@ public class FilmDetailFragment extends Fragment {
                 binding.runningTimeTv.setText(Integer.toString(film.getRunningTime()));
                 binding.producerTv.setText(film.getProducer());
                 binding.descriptionTv.setText(film.getDescription());
+                Glide.with(binding.getRoot())
+                        .load(film.getImage())
+                        .centerCrop()
+                        .into(binding.picture);
             }
 
             @Override

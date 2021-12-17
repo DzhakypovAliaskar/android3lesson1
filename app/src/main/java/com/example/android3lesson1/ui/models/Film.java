@@ -10,6 +10,9 @@ public class Film {
     @SerializedName("title")
     private String title;
 
+    @SerializedName("image")
+    private String image;
+
     @SerializedName("description")
     private String description;
 
@@ -24,6 +27,14 @@ public class Film {
 
     @SerializedName("release_date")
     private int releaseDate;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public String getId() {
         return id;
